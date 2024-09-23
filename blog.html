@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -39,5 +39,130 @@
       };
     </script>
   </head>
-  <body></body>
+  <body class="bg-background">
+    <header>
+      <nav class="bg-nav-bg py-6">
+        <div class="container mx-auto flex justify-between items-center">
+          <div class="px-8 py-3 bg-btn-bg inline-block rounded-lg">
+            <a
+              href="index.html"
+              class="font-lexend text-xl font-semibold leading-6 text-primary-text"
+              >Home</a
+            >
+          </div>
+          <div class="flex gap-4 items-center">
+            <img src="assets/logo.png" alt="Logo" class="w-12 h-12" />
+            <h1
+              class="font-lexend text-xl font-semibold leading-6 text-primary-text"
+            >
+              Donate Bangladesh
+            </h1>
+          </div>
+          <div class="flex gap-3 items-center">
+            <img src="assets/coin.png" alt="Coin" class="w-7 h-7" />
+            <p
+              class="font-lexend text-xl font-medium leading-6 text-secondary-text"
+            >
+              <span>304963</span> BDT
+            </p>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="container mx-auto my-8">
+        <div class="flex gap-2 items-end">
+          <p class="font-lexend font-bold text-5xl text-primary-text">
+            Important FAQ
+          </p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="inline-block w-16"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.444 3 12c0 2.104.859 4.023 2.273 5.48.432.447.74 1.04.586 1.641a4.483 4.483 0 0 1-.923 1.785A5.969 5.969 0 0 0 6 21c1.282 0 2.47-.402 3.445-1.087.81.22 1.668.337 2.555.337Z"
+            />
+          </svg>
+        </div>
+      </section>
+      <section class="container mx-auto">
+        <div class="join join-vertical w-full">
+          <div
+            class="collapse collapse-arrow join-item border-input-border border"
+          >
+            <input type="radio" name="my-accordion-4" checked="checked" />
+            <div class="collapse-title font-lexend text-2xl font-medium">
+              What is the Document Object Model (DOM)?
+            </div>
+            <div class="collapse-content">
+              <p class="font-lexend text-lg font-normal text-secondary-text">
+                The Document Object Model (DOM) is a programming interface that
+                represents the structure of a webpage as a tree of objects. It
+                allows developers to interact with and modify the content,
+                structure, and style of a webpage using languages like
+                JavaScript. The DOM also handles events, making web pages
+                dynamic and responsive to user actions.
+              </p>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow join-item border-base-300 border">
+            <input type="radio" name="my-accordion-4" />
+            <div class="collapse-title font-lexend text-2xl font-medium">
+              How do you select an element from the DOM?
+            </div>
+            <div class="collapse-content">
+              <p class="font-lexend text-lg font-normal text-secondary-text">
+                To select an element from the DOM in JavaScript, you can use
+                document.getElementById('id') to select by ID,
+                document.getElementsByClassName('className') to select by class,
+                document.getElementsByTagName('tagName') to select by tag,
+                document.querySelector('selector') to select the first matching
+                element by a CSS selector, and
+                document.querySelectorAll('selector') to select all matching
+                elements by a CSS selector.
+              </p>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow join-item border-base-300 border">
+            <input type="radio" name="my-accordion-4" />
+            <div class="collapse-title font-lexend text-2xl font-medium">
+              What is event delegation in the context of the DOM, and why is it
+              useful?
+            </div>
+            <div class="collapse-content">
+              <p class="font-lexend text-lg font-normal text-secondary-text">
+                Event delegation is a technique where a single event listener is
+                added to a parent element to handle events for its child
+                elements. It's useful because it improves performance by
+                reducing the number of listeners and works for dynamically added
+                elements. It leverages event bubbling to manage multiple
+                elements with a single listener.
+              </p>
+            </div>
+          </div>
+          <div class="collapse collapse-arrow join-item border-base-300 border">
+            <input type="radio" name="my-accordion-4" />
+            <div class="collapse-title font-lexend text-2xl font-medium">
+              How do you manipulate an element's attributes and styles using the
+              DOM?
+            </div>
+            <div class="collapse-content">
+              <p class="font-lexend text-lg font-normal text-secondary-text">
+                To manipulate an element's attributes in the DOM, use
+                setAttribute() or directly modify properties like element.src.
+                For styles, use the style property or modify classes with
+                classList.add() and classList.remove().
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
