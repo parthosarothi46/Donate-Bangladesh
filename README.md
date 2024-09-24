@@ -24,7 +24,7 @@
   - Current donation amount.✅
   - Input field for donation amount.✅
   - Button for submitting the donation.✅
-- **History Section**: Initially hidden and empty.
+- **History Section**: Initially hidden and empty.✅
 
 ## Functionalities
 
@@ -37,16 +37,16 @@
     - The card’s current donation amount will increase.✅
     - A meaningful notification will be added to the History section.✅
 - **Input Validation**:
-  - Show an alert if invalid data is found and stop the transaction.
+  - Show an alert if invalid data is found and stop the transaction.✅
   - Validate the donation amount:
-    - If the donation amount is greater than the account balance.
-    - If the input field contains an invalid number.
-    - If the input field is empty.
+    - If the donation amount is greater than the account balance.✅
+    - If the input field contains an invalid number.✅
+    - If the input field is empty.✅
 - **History Section**:
   - The history section will display transaction notifications, including:
-    - Date and time of the transaction.
-    - Donation amount.
-    - Donation name.
+    - Date and time of the transaction.✅
+    - Donation amount.✅
+    - Donation name.✅
 
 ## Challenges
 

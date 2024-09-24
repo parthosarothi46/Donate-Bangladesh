@@ -7,8 +7,8 @@ let totalAmount = document.querySelector("#my-amount");
 let noakhaliDonation = document.querySelector("#noakhali-donation");
 
 donationBtn.addEventListener("click", function () {
-  donationCard.classList.remove("hidden");
   historyCard.classList.add("hidden");
+  donationCard.classList.remove("hidden");
   donationBtn.classList.remove(
     "font-medium",
     "text-secondary-text",
@@ -53,26 +53,39 @@ historyBtn.addEventListener("click", function () {
 });
 
 donateNoakhali.addEventListener("click", function () {
+  const noakhaliTitle = document.querySelector("#noakhali-title").innerText;
   let myAmount = Number(document.querySelector("#my-amount").innerText);
   let totalDonation = Number(
     document.querySelector("#noakhali-donation").innerText
   );
   let donate = Number(document.querySelector("#noakhali-donate-amount").value);
-  remainingAmount = myAmount - donate;
-  latestDonation = totalDonation + donate;
+  if (document.querySelector("#noakhali-donate-amount").value === "") {
+    alert("Donation amount cannot be empty");
+    return;
+  }
+  if (isNaN(donate) || donate <= 0) {
+    alert("Please provide a valid donation amount");
+    return;
+  }
+  if (donate > myAmount) {
+    alert("Donation amount exceeds your available balance");
+    return;
+  }
+  let remainingAmount = myAmount - donate;
+  let latestDonation = totalDonation + donate;
   totalAmount.innerText = remainingAmount;
   noakhaliDonation.innerText = latestDonation;
   const childEl = document.createElement("div");
   childEl.className = "border border-input-border rounded-2xl p-8";
   childEl.innerHTML = `<p
-            class="font-lexend text-xl font-bold leading-7 text-primary-text mb-4"
-        >
-            96500 Taka is Donated for famine-2024 at Feni, Bangladesh
-        </p>
-        <p
-            class="font-lexend text-base font-light leading-6 text-secondary-text"
-        >
-            Date : Tue Sep 17 2024 08:39:11 GMT +0600 (Bangladesh Standard Time)
-        </p>`;
+          class="font-lexend text-xl font-bold leading-7 text-primary-text mb-4"
+      >
+          ${donate} Taka is Donated for ${noakhaliTitle}
+      </p>
+      <p
+          class="font-lexend text-base font-light leading-6 text-secondary-text"
+      >
+          Date: ${new Date().toString()}
+      </p>`;
   historyCard.appendChild(childEl);
 });
