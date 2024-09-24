@@ -250,6 +250,33 @@
         class="container mx-auto flex flex-col gap-6 mt-8 mb-20 hidden"
         id="history-card"
       ></section>
+
+      <!-- Success Modal -->
+      <div
+        id="successModal"
+        class="z-50 fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 hidden"
+      >
+        <div
+          class="bg-white rounded-2xl flex flex-col items-center gap-8 py-9 px-32"
+        >
+          <h2 class="text-4xl text-primary-text font-lexend font-bold">
+            Congrates!
+          </h2>
+          <img src="assets/coin.png" alt="coin" class="w-10" />
+          <p class="text-lg text-secondary-text font-lexend font-light">
+            You Have Donated for Humankind
+          </p>
+          <p class="text-2xl text-primary-text font-lexend font-bold">
+            Successfully
+          </p>
+          <button
+            id="closeModal"
+            class="text-secondary-text font-lexend font-medium py-3 px-5 rounded-lg bg-coin-bg"
+          >
+            close confirmation
+          </button>
+        </div>
+      </div>
     </main>
     <script src="js/html.js"></script>
   </body>

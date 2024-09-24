@@ -88,4 +88,12 @@ donateNoakhali.addEventListener("click", function () {
           Date: ${new Date().toString()}
       </p>`;
   historyCard.appendChild(childEl);
+
+  // Display the modal with success message
+  document.querySelector("#successModal").classList.remove("hidden");
+
+  // Close modal when the close button is clicked
+  document.querySelector("#closeModal").addEventListener("click", function () {
+    document.querySelector("#successModal").classList.add("hidden");
+  });
 });
