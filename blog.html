@@ -40,17 +40,21 @@
     </script>
   </head>
   <body class="bg-background">
-    <header>
-      <nav class="bg-nav-bg py-6">
-        <div class="container mx-auto flex justify-between items-center">
-          <div class="px-8 py-3 bg-btn-bg inline-block rounded-lg">
+    <header class="sticky top-0">
+      <nav class="bg-nav-bg py-6 px-3 lg:px-0">
+        <div
+          class="container mx-auto flex gap-3 md:gap-0 justify-between items-center"
+        >
+          <div
+            class="px-3 py-2 md:px-8 md:py-3 bg-btn-bg inline-block rounded-lg"
+          >
             <a
               href="index.html"
               class="font-lexend text-xl font-semibold leading-6 text-primary-text"
               >Home</a
             >
           </div>
-          <div class="flex gap-4 items-center">
+          <div class="flex flex-col md:flex-row gap-2 md:gap-4 items-center">
             <img src="assets/logo.png" alt="Logo" class="w-12 h-12" />
             <h1
               class="font-lexend text-xl font-semibold leading-6 text-primary-text"
@@ -58,7 +62,9 @@
               Donate Bangladesh
             </h1>
           </div>
-          <div class="flex gap-3 items-center">
+          <div
+            class="flex flex-col md:flex-row gap-2 md:gap-3 justify-center items-center"
+          >
             <img src="assets/coin.png" alt="Coin" class="w-7 h-7" />
             <p
               class="font-lexend text-xl font-medium leading-6 text-secondary-text"
@@ -70,9 +76,11 @@
       </nav>
     </header>
     <main>
-      <section class="container mx-auto my-8">
+      <section class="container mx-auto my-8 p-3">
         <div class="flex gap-2 items-end">
-          <p class="font-lexend font-bold text-5xl text-primary-text">
+          <p
+            class="font-lexend font-bold text-3xl md:text-5xl text-primary-text"
+          >
             Important FAQ
           </p>
           <svg
@@ -81,7 +89,7 @@
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="inline-block w-16"
+            class="inline-block w-12 md:w-16"
           >
             <path
               stroke-linecap="round"
@@ -91,8 +99,8 @@
           </svg>
         </div>
       </section>
-      <section class="container mx-auto">
-        <div class="join join-vertical w-full">
+      <section class="container mx-auto mb-20">
+        <div class="join join-vertical w-full p-3">
           <div
             class="collapse collapse-arrow join-item border-input-border border"
           >
@@ -120,14 +128,12 @@
             </div>
             <div class="collapse-content">
               <p class="font-lexend text-lg font-normal text-secondary-text">
-                To select an element from the DOM in JavaScript, you can use
-                document.getElementById('id') to select by ID,
-                document.getElementsByClassName('className') to select by class,
-                document.getElementsByTagName('tagName') to select by tag,
-                document.querySelector('selector') to select the first matching
-                element by a CSS selector, and
-                document.querySelectorAll('selector') to select all matching
-                elements by a CSS selector.
+                getElementById('id') selects by ID.
+                getElementsByClassName('class') selects by class (live
+                collection). getElementsByTagName('tag') selects by tag (live
+                collection). querySelector('selector') selects the first match.
+                querySelectorAll('selector') selects all matches (static
+                collection).
               </p>
             </div>
           </div>
