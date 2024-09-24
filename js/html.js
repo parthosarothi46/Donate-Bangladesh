@@ -3,8 +3,12 @@ const historyBtn = document.querySelector("#history-btn");
 const donationCard = document.querySelector("#donation-card");
 const historyCard = document.querySelector("#history-card");
 const donateNoakhali = document.querySelector("#donate-noakhali");
+const donateFeni = document.querySelector("#donate-feni");
+const donateQuota = document.querySelector("#donate-quota");
 let totalAmount = document.querySelector("#my-amount");
 let noakhaliDonation = document.querySelector("#noakhali-donation");
+let feniDonation = document.querySelector("#feni-donation");
+let quotaDonation = document.querySelector("#quota-donation");
 
 donationBtn.addEventListener("click", function () {
   historyCard.classList.add("hidden");
@@ -54,11 +58,9 @@ historyBtn.addEventListener("click", function () {
 
 donateNoakhali.addEventListener("click", function () {
   const noakhaliTitle = document.querySelector("#noakhali-title").innerText;
-  let myAmount = Number(document.querySelector("#my-amount").innerText);
-  let totalDonation = Number(
-    document.querySelector("#noakhali-donation").innerText
-  );
-  let donate = Number(document.querySelector("#noakhali-donate-amount").value);
+  let myAmount = amount("#my-amount");
+  let totalDonation = amount("#noakhali-donation");
+  let donate = donateAmount("#noakhali-donate-amount");
   if (document.querySelector("#noakhali-donate-amount").value === "") {
     alert("Donation amount cannot be empty");
     return;
@@ -88,12 +90,79 @@ donateNoakhali.addEventListener("click", function () {
           Date: ${new Date().toString()}
       </p>`;
   historyCard.appendChild(childEl);
+  showModal("#noakhali-donate-amount");
+});
 
-  // Display the modal with success message
-  document.querySelector("#successModal").classList.remove("hidden");
+donateFeni.addEventListener("click", function () {
+  const feniTitle = document.querySelector("#feni-title").innerText;
+  let myAmount = amount("#my-amount");
+  let totalDonation = amount("#feni-donation");
+  let donate = donateAmount("#feni-donate-amount");
+  if (document.querySelector("#feni-donate-amount").value === "") {
+    alert("Donation amount cannot be empty");
+    return;
+  }
+  if (isNaN(donate) || donate <= 0) {
+    alert("Please provide a valid donation amount");
+    return;
+  }
+  if (donate > myAmount) {
+    alert("Donation amount exceeds your available balance");
+    return;
+  }
+  let remainingAmount = myAmount - donate;
+  let latestDonation = totalDonation + donate;
+  totalAmount.innerText = remainingAmount;
+  feniDonation.innerText = latestDonation;
+  const childEl = document.createElement("div");
+  childEl.className = "border border-input-border rounded-2xl p-8";
+  childEl.innerHTML = `<p
+          class="font-lexend text-xl font-bold leading-7 text-primary-text mb-4"
+      >
+          ${donate} Taka is Donated for ${feniTitle}
+      </p>
+      <p
+          class="font-lexend text-base font-light leading-6 text-secondary-text"
+      >
+          Date: ${new Date().toString()}
+      </p>`;
+  historyCard.appendChild(childEl);
+  showModal("#feni-donate-amount");
+});
 
-  // Close modal when the close button is clicked
-  document.querySelector("#closeModal").addEventListener("click", function () {
-    document.querySelector("#successModal").classList.add("hidden");
-  });
+donateQuota.addEventListener("click", function () {
+  const quotaTitle = document.querySelector("#quota-title").innerText;
+  let myAmount = amount("#my-amount");
+  let totalDonation = amount("#quota-donation");
+  let donate = donateAmount("#quota-donate-amount");
+  if (document.querySelector("#quota-donate-amount").value === "") {
+    alert("Donation amount cannot be empty");
+    return;
+  }
+  if (isNaN(donate) || donate <= 0) {
+    alert("Please provide a valid donation amount");
+    return;
+  }
+  if (donate > myAmount) {
+    alert("Donation amount exceeds your available balance");
+    return;
+  }
+  let remainingAmount = myAmount - donate;
+  let latestDonation = totalDonation + donate;
+  totalAmount.innerText = remainingAmount;
+  quotaDonation.innerText = latestDonation;
+  const childEl = document.createElement("div");
+  childEl.className = "border border-input-border rounded-2xl p-8";
+  childEl.innerHTML = `<p
+          class="font-lexend text-xl font-bold leading-7 text-primary-text mb-4"
+      >
+          ${donate} Taka is Donated for ${quotaTitle}
+      </p>
+      <p
+          class="font-lexend text-base font-light leading-6 text-secondary-text"
+      >
+          Date: ${new Date().toString()}
+      </p>`;
+  historyCard.appendChild(childEl);
+  showModal("#quota-donate-amount");
 });
